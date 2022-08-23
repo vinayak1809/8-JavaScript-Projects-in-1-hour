@@ -1,0 +1,42 @@
+
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Poopins",sans-serif;
+    margin:0;
+    min-height: 100vh;
+    text-align: center;
+    padding: 5rem;
+    transition: background 0.3s linear,color 0.3s linear;        /* after / before darkmode body is going to get execute so transition also will be*/
+}
+.toogle-container{
+    position: fixed;
+    right: 5px;
+    top: 5px;
+}
+.dark{
+    background-color: black;
+    color: white;
+}
+body.dark label{
+    background-color: white;
+}
+label{
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s linear;
+}
+
+input{
+    visibility: hidden;
+}
