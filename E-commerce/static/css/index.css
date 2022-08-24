@@ -34,9 +34,12 @@ nav button{
     margin: 5px;
     font-size: medium;
 }
-nav > div >button{
+.cart > button{
     border: 2px solid greenyellow;
     border-radius: 15%;
+}
+.cart > p{
+    font-size: large;
 }
 
 header,span,.album > h5,.bottom,.price-cart,.merches>h5{
@@ -53,8 +56,7 @@ header{
 }
 .title{
     margin-top: 15px;
-    font-size: 45px;
-    
+    font-size: 45px;   
 }
 
 .music-category,.merch-category{
@@ -66,7 +68,7 @@ header{
 }
 
 .album,.merches{
-    margin: 20px 80px;
+    margin: 0px 80px;
 }
 img{
     width: 300px;
@@ -90,7 +92,7 @@ img{
 }
 
 
-.merch > span > button{
+.merch > span > button,.cart-section > span > button{
     margin-top: 50px; 
     margin-bottom: 30px;
     padding: 10px;
@@ -103,8 +105,8 @@ img{
 } 
 
 .bottom {
-justify-content: space-around;
-background-color: rgb(61, 167, 209);
+    justify-content: space-around;
+    background-color: rgb(61, 167, 209);
 }
 
 .bottom > .socials{
@@ -118,4 +120,81 @@ background-color: rgb(61, 167, 209);
 
 .title > p{
     font-family: 'Anton', sans-serif;
+    font-weight: bold;
+}
+
+
+/* cart items */
+
+.cart-section{
+    background-color: white;
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 5px;
+    width: 350px;
+}
+/* .cart-section-show{
+    display: block;
+} */
+.close{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.cart-section > ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+ul > ul > img {
+margin-top: 20px;
+}
+
+ul>ul> p,ul>ul>.inner-quant{
+margin-top: 50px;
+}
+
+.cart-section > ul >li{
+    margin: 0px 20px;
+}
+.total{
+    position: absolute;
+    right: 20px;
+}
+.cart-section > ul >li{
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+
+.item > img {
+    width: 50px;
+    height: 50px;
+}
+.inner-quant {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100px; 
+}
+.inner-quant > p{
+    margin: 0;
+    width: 10px;
+}
+
+#notification{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    border-radius: 5%;
+    right: 10px;
+    bottom: 5px;
+    width: 300px;
+    height: 80px;
+    background-color: rgb(153, 229, 153);
+    color: black;
 }
