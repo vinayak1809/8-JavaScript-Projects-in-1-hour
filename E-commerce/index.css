@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+*{
+    box-sizing: border-box;
+}
+ body{ 
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    font-size: small;
+    width: 100%;
+    padding: 2px;
+}
+
+nav > div{
+    position: relative;
+    right: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+nav button{
+    background-color: black;
+    border: none;
+    color: white;
+    margin: 5px;
+    font-size: medium;
+}
+nav > div >button{
+    border: 2px solid greenyellow;
+    border-radius: 15%;
+}
+
+header,span,.album > h5,.bottom,.price-cart,.merches>h5{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+header{
+    background-color: grey;
+    font-size: 100px;
+    height: 200px;
+}
+.title{
+    margin-top: 15px;
+    font-size: 45px;
+    
+}
+
+.music-category,.merch-category{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
+    margin: 0px 15%;
+}
+
+.album,.merches{
+    margin: 20px 80px;
+}
+img{
+    width: 300px;
+    height: 300px;
+}
+.album > h5,.merches>h5{
+    font-size: large;
+    font-family: 'Silkscreen', cursive;
+}
+
+.price-cart {
+    justify-content: space-between; 
+}
+.price-cart > button{
+    background-color: rgb(68, 179, 223);
+    padding: 5px;
+    font-size: medium;
+    color: white;
+    border: none;
+    border-radius: 5%;
+}
+
+
+.merch > span > button{
+    margin-top: 50px; 
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: black;
+    color: white; 
+    border: none;
+    font-size: medium;
+    border-radius: 8%;
+
+} 
+
+.bottom {
+justify-content: space-around;
+background-color: rgb(61, 167, 209);
+}
+
+.bottom > .socials{
+    display: flex;
+    flex-direction: row;
+}
+.socials > a > span{
+    margin: 15px;
+    color: white;
+}
+
+.title > p{
+    font-family: 'Anton', sans-serif;
+}
