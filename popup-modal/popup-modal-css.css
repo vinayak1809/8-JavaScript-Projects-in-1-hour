@@ -43,6 +43,7 @@ button{
     border-radius: 5px;
     padding: 2rem;
     width: 500px;
+    /* margin: 50px; */
 }
 .popup button{
     background-color: white;

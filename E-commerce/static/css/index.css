@@ -103,7 +103,9 @@ img{
     border-radius: 8%;
 
 } 
-
+.cart-section > span > button{
+    margin-top: 0px;
+}
 .bottom {
     justify-content: space-around;
     background-color: rgb(61, 167, 209);
@@ -118,9 +120,10 @@ img{
     color: white;
 }
 
-.title > p{
+.cart-section-title >p{
     font-family: 'Anton', sans-serif;
     font-weight: bold;
+    font-size: larger;
 }
 
 
@@ -134,55 +137,11 @@ img{
     right: 5px;
     width: 350px;
 }
-/* .cart-section-show{
-    display: block;
-} */
+
 .close{
     position: absolute;
     right: 10px;
     top: 20px;
-}
-
-.cart-section > ul{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-}
-
-ul > ul > img {
-margin-top: 20px;
-}
-
-ul>ul> p,ul>ul>.inner-quant{
-margin-top: 50px;
-}
-
-.cart-section > ul >li{
-    margin: 0px 20px;
-}
-.total{
-    position: absolute;
-    right: 20px;
-}
-.cart-section > ul >li{
-    border-bottom: 2px solid black;
-    padding-bottom: 5px;
-}
-
-.item > img {
-    width: 50px;
-    height: 50px;
-}
-.inner-quant {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100px; 
-}
-.inner-quant > p{
-    margin: 0;
-    width: 10px;
 }
 
 #notification{
@@ -197,4 +156,75 @@ margin-top: 50px;
     height: 80px;
     background-color: rgb(153, 229, 153);
     color: black;
+}
+
+
+/* cart-section */
+
+
+.cart-section-title{
+    margin-top:10px;
+    font-size: 20px;   
+}
+span.total{
+    position: relative;
+    float: right;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+.carousel {
+  align-items: center;
+  display: flex;
+  margin: 2rem auto;
+  position: relative;
+  width: 250px;
+  overflow: hidden;
+}
+   
+.carousel__images {
+  align-items: center;
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.25s; 
+  height: 370px;
+}
+   
+
+img.active {
+    border-radius: 5px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25);
+  height: 300px;
+  width: 300px;
+  z-index: 1;
+}  
+
+.carousel__button {
+    background: teal;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 3rem;
+    opacity: 0.25;
+    position: absolute;
+    transition: opacity 0.25s;
+    width: 3rem;
+    z-index: 1;   
+}
+
+.previous {
+    top:140px;
+    left: 5px;
+}
+.next {
+    top:140px;
+  right: 5px;
+}
+.carousel__button:hover {
+  opacity: 0.8;
 }
