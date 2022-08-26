@@ -119,21 +119,26 @@ const items = document.getElementById("items");
 
 window.addEventListener("DOMContentLoaded", () => {
   axios
-    .get("http://localhost:5000/products")
+    .get("http://localhost:2000/products")
     .then((data) => {
-      console.log(data.data[0]);
+      console.log(data.data);
 
-      const div = document.createElement("div");
-      div.innerHTML = `<div class="album album-4" id="album-4">
-      <h5>${data.data[0].title}</h5>
-      <img src="${data.data[0].imageUrl}" alt="Album 4">
-      <div class="price-cart">
-          <p class="price">$${data.data[0].price}</p>
-          <button class="add-to-cart" id="album-4">Add to Cart</button>
-      </div>
-      </div>`;
+      data.data.forEach((item) => {
+        const div = document.createElement("div");
+        div.innerHTML = `<div class="album album-4" id="album-4">
+        <h5>${item.title}</h5>
+        <img src="${item.imageUrl}" alt="Album 4">
+        <div class="price-cart">
+            <p class="price">$${item.price}</p>
 
-      items.appendChild(div);
+            <form action="http://localhost:2000/cart/${item.id}" method="POST">
+            
+            <button class="add-to-cart" type="submit" id="${item.id}"> Add to Cart </button></form>
+        </div>
+        </div>`;
+
+        items.appendChild(div);
+      });
     })
     .catch((err) => {
       console.log(err);
