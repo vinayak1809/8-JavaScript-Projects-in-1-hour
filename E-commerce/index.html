@@ -25,7 +25,7 @@
         
         <section class="music">
         <span class="title"><p> Music </p></span>
-            <div onclick="addtocart(event)" class="music-category">
+            <div onclick="addtocart(event)" class="music-category" id="items">
                 <div class="album album-1" id="album-1">
                     <h5>Album 1</h5>
                     <img src="./static/images/Album 1.png" alt="Album 1">
@@ -50,14 +50,14 @@
                         <button class="add-to-cart" id="album-3">Add to Cart</button>
                     </div>
                 </div>
-                <div class="album album-4" id="album-4">
+                <!-- <div class="album album-4" id="album-4">
                     <h5>Album 4</h5>
                     <img src="./static/images/Album 4.png" alt="Album 4">
                     <div class="price-cart">
                         <p class="price">$10.99</p>
                         <button class="add-to-cart" id="album-4">Add to Cart</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -124,6 +124,8 @@
     </section>
 
     <section id="notification"></section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

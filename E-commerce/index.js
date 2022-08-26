@@ -1,4 +1,3 @@
-// const listen = e.target;
 const store = [];
 
 const item = document.getElementById("item");
@@ -6,7 +5,7 @@ const price = document.getElementById("price");
 const quantity = document.getElementById("quantity");
 const total = document.getElementById("total");
 
-var purchase_price = 0;
+var total_price = 0;
 
 function addtocart(event) {
   const find = event.target.id;
@@ -42,8 +41,8 @@ function addtocart(event) {
   const a = take.children[2].children[0].innerHTML;
   const b = Number(a.slice(1, a.length));
 
-  purchase_price += b;
-  total.innerHTML = `$${purchase_price}`;
+  total_price += b;
+  total.innerHTML = `$${total_price}`;
   console.log(purchase_price);
 
   div.appendChild(image);
@@ -115,3 +114,28 @@ function call() {
   });
 }
 call();
+
+const items = document.getElementById("items");
+
+window.addEventListener("DOMContentLoaded", () => {
+  axios
+    .get("http://localhost:5000/products")
+    .then((data) => {
+      console.log(data.data[0]);
+
+      const div = document.createElement("div");
+      div.innerHTML = `<div class="album album-4" id="album-4">
+      <h5>${data.data[0].title}</h5>
+      <img src="${data.data[0].imageUrl}" alt="Album 4">
+      <div class="price-cart">
+          <p class="price">$${data.data[0].price}</p>
+          <button class="add-to-cart" id="album-4">Add to Cart</button>
+      </div>
+      </div>`;
+
+      items.appendChild(div);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
