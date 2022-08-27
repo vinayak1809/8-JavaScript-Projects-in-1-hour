@@ -65,10 +65,8 @@ const items = document.getElementById("items");
 
 window.addEventListener("DOMContentLoaded", () => {
   axios
-    .get("http://localhost:2000/products")
+    .get("http://localhost:2000/?page=2")
     .then((data) => {
-      console.log(data.data);
-
       data.data.forEach((item) => {
         const div = document.createElement("div");
         div.innerHTML = `<div class="album album-4" id="album-4">
@@ -93,11 +91,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   axios.get("http://localhost:2000/cart").then((data) => {
-    console.log(data.data, "daaaaaata");
-
     data.data.forEach((item) => {
       if (item) {
-        console.log(item, "item");
         const div = document.createElement("div");
 
         const image = document.createElement("img");
