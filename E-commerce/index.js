@@ -4,64 +4,10 @@ const item = document.getElementById("item");
 const price = document.getElementById("price");
 const quantity = document.getElementById("quantity");
 const total = document.getElementById("total");
+const no_of_items = document.getElementById("no._of_items");
 
 var total_price = 0;
-
-function addtocart(event) {
-  const find = event.target.id;
-
-  var say = true;
-  for (i = 0; i < store.length; i++) {
-    if (store[i] == find) {
-      say = false;
-    } else {
-      say = true;
-    }
-  }
-
-  if (say == false) {
-    alert("This item is already added to cart");
-    return;
-  }
-  store.push(find);
-
-  const take = document.getElementById(find);
-
-  const div = document.createElement("div");
-
-  const image = document.createElement("img");
-  image.setAttribute("src", take.children[1].src);
-
-  const h3 = document.createElement("h3");
-  h3.innerHTML = take.children[0].innerHTML;
-
-  const p = document.createElement("p");
-  p.innerHTML = take.children[2].children[0].innerHTML;
-
-  const a = take.children[2].children[0].innerHTML;
-  const b = Number(a.slice(1, a.length));
-
-  total_price += b;
-  total.innerHTML = `$${total_price}`;
-  console.log(purchase_price);
-
-  div.appendChild(image);
-  div.appendChild(h3);
-  div.appendChild(p);
-
-  quantity.appendChild(div);
-
-  const notify = document.getElementById("notification");
-  notify.innerHTML = `Your Product: ${take.children[0].innerHTML} is added to cart`;
-  notify.style.setProperty("display", "flex");
-
-  setTimeout(notification, 2000);
-
-  call();
-}
-
-function checkTheCart(id) {}
-
+var count = 0;
 function notification() {
   const notify = document.getElementById("notification");
   notify.style.setProperty("display", "none");
@@ -143,4 +89,44 @@ window.addEventListener("DOMContentLoaded", () => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  axios.get("http://localhost:2000/cart").then((data) => {
+    console.log(data.data, "daaaaaata");
+
+    data.data.forEach((item) => {
+      if (item) {
+        console.log(item, "item");
+        const div = document.createElement("div");
+
+        const image = document.createElement("img");
+        image.setAttribute("src", item.imageUrl);
+
+        const h3 = document.createElement("h3");
+        h3.innerHTML = item.title;
+
+        const p = document.createElement("p");
+        p.innerHTML = item.price;
+
+        const a = item.price;
+
+        total_price += a;
+        total.innerHTML = `$${total_price}`;
+        console.log(total_price);
+
+        div.appendChild(image);
+        div.appendChild(h3);
+        div.appendChild(p);
+
+        count++;
+        no_of_items.innerHTML = count;
+        quantity.appendChild(div);
+
+        call();
+      } else {
+        console.log("nth to show");
+      }
+    });
+  });
 });
