@@ -120,15 +120,15 @@ img{
     color: white;
 }
 
-.cart-section-title >p{
-    font-family: 'Anton', sans-serif;
-    font-weight: bold;
-    font-size: larger;
-}
 
 
 /* cart items */
 
+.cart-section-title > p{
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+}
 .cart-section{
     background-color: white;
     display: none;

@@ -5,6 +5,8 @@ const price = document.getElementById("price");
 const quantity = document.getElementById("quantity");
 const total = document.getElementById("total");
 const no_of_items = document.getElementById("no._of_items");
+const totalPrice = document.getElementById("totalPrice");
+const form = document.getElementById("form");
 
 var total_price = 0;
 var count = 0;
@@ -91,8 +93,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   axios.get("http://localhost:2000/cart").then((data) => {
+    console.log("daraaaaa", data.data[0].cartItem.cartId);
     data.data.forEach((item) => {
       if (item) {
+        console.log(item.cartItem.quantity, "quantity of product");
         const div = document.createElement("div");
 
         const image = document.createElement("img");
@@ -116,6 +120,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         count++;
         no_of_items.innerHTML = count;
+        form.action = `http://localhost:2000/checkout/${data.data[0].cartItem.cartId}`;
+        totalPrice.value = total_price;
         quantity.appendChild(div);
 
         call();

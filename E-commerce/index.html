@@ -112,6 +112,7 @@
                     <img class="active" src="https://images.unsplash.com/photo-1626970929048-0337093cfaf0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"  alt="">
                     <h3>product 1 </h3>
                     <p>$20.00</p>
+                    <!-- <p id="quan">quantityaaaaaa</p> -->
                 </div>
             </div>
             <button class="carousel__button next" id="next">></button>
@@ -120,7 +121,13 @@
             <p class="1">Total:</p>
             <p class="2" id="total"></p>
         </span>
-        <span><button>CHECKOUT</button></span>
+
+        <form id="form" method="POST">
+            <input type="hidden" name="<%=products[0].userId %>" >
+            <input type="hidden" id="totalPrice" name="totalPrice">
+             <span><button type="submit">CHECKOUT</button></span>
+        </form>
+
     </section>
 
     <section id="notification"></section>
